@@ -27,30 +27,55 @@
     const content = document.getElementById("content");
 
     function switchToMainContent() {
-      content.innerHTML =
-        '<div class="slogan-wrapper">        <h1 class="slogan-text">BEAT<br />TO THE<br />FUTURE</h1>        <div class="buttons-wrapper">          <button id="about-us" class="white-button">About Us</button>          <button id="artists" class="secondary-button">Artists</button>        </div>      </div>      <iframe        class="youtube-video"        width="560"        height="315"        src="https://www.youtube.com/embed/SsdYZSIhiJs?si=HUrIzrW68fE2Bn7I"        title="YouTube video player"        frameborder="0"        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"        allowfullscreen      ></iframe>';
-
-      const aboutUsButton = document.getElementById("about-us");
-      const artistsButton = document.getElementById("artists");
-      aboutUsButton.addEventListener("click", switchToAboutUs);
-      artistsButton.addEventListener("click", switchToArtists);
+      var xhr =
+        typeof XMLHttpRequest != "undefined"
+          ? new XMLHttpRequest()
+          : new ActiveXObject("Microsoft.XMLHTTP");
+      xhr.open("get", "./content/main.html", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("content").innerHTML = xhr.responseText;
+          const aboutUsButton = document.getElementById("about-us");
+          const artistsButton = document.getElementById("artists");
+          aboutUsButton.addEventListener("click", switchToAboutUs);
+          artistsButton.addEventListener("click", switchToArtists);
+        }
+      };
+      xhr.send();
     }
 
     function switchToAboutUs() {
-      content.innerHTML =
-        '<div class="about-wrapper">        <h2 class="about-us-text">ABOUT US</h2>        <p>          KICK HAT SNARE is a record label from Argentina that showcases the          authentic stories and positive messages of its artists through their          lyrics. <br />          <br />          We believe that music is a force for good in the world. It can help          people get through their days and therefore build their future around          it.        </p>        <div class="about-buttons">          <button id="home" class="white-button">Home</button>          <button id="artists" class="secondary-button">Artists</button>        </div>      </div>      <div class="khs-logo-wrapper">        <span class="khs-logo-letters">KHS</span>      </div>';
-
-      const homeButton = document.getElementById("home");
-      const artistsButton = document.getElementById("artists");
-      homeButton.addEventListener("click", switchToMainContent);
-      artistsButton.addEventListener("click", switchToArtists);
+      var xhr =
+        typeof XMLHttpRequest != "undefined"
+          ? new XMLHttpRequest()
+          : new ActiveXObject("Microsoft.XMLHTTP");
+      xhr.open("get", "./content/aboutus.html", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("content").innerHTML = xhr.responseText;
+          const homeButton = document.getElementById("home");
+          const artistsButton = document.getElementById("artists");
+          homeButton.addEventListener("click", switchToMainContent);
+          artistsButton.addEventListener("click", switchToArtists);
+        }
+      };
+      xhr.send();
     }
 
     function switchToArtists() {
-      content.innerHTML =
-        '<div class="artists-wrapper">        <a href="https://jaesvn.heptagonmusic.com">          <img            class="artist-image"            src="./assets/images/jaesvn-profile.png"            draggable="false"        /></a>        <div class="artist-details-wrapper">          <a class="artist-link" href="https://jaesvn.heptagonmusic.com">            <h2>JAE SVN</h2>          </a>          <span>Director, Artist</span>        </div>        <button id="home" class="white-button">Home</button>      </div>';
-      const homeButton = document.getElementById("home");
-      homeButton.addEventListener("click", switchToMainContent);
+      var xhr =
+        typeof XMLHttpRequest != "undefined"
+          ? new XMLHttpRequest()
+          : new ActiveXObject("Microsoft.XMLHTTP");
+      xhr.open("get", "./content/artists.html", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("content").innerHTML = xhr.responseText;
+          const homeButton = document.getElementById("home");
+          homeButton.addEventListener("click", switchToMainContent);
+        }
+      };
+      xhr.send();
     }
 
     switchToMainContent();
