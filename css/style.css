@@ -86,7 +86,7 @@ header .khs-logo {
   margin-left: 10rem;
 }
 
-.khs-logo-wrapper{
+.khs-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@ header .khs-logo {
   margin-left: 10rem;
 }
 
-.khs-logo-letters{
+.khs-logo-letters {
   color: black;
   font-weight: 900;
   font-size: 5rem;
@@ -133,11 +133,11 @@ header .khs-logo {
   text-decoration: none;
 }
 
-.artist-linka:visited{
+.artist-linka:visited {
   color: white;
 }
 
-.artists-wrapper{
+.artists-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,7 +152,7 @@ header .khs-logo {
   color: #e4e4e4;
 }
 
-.artists-wrapper .white-button{
+.artists-wrapper .white-button {
   position: absolute;
   bottom: 0;
   margin-bottom: 2rem;
@@ -160,4 +160,86 @@ header .khs-logo {
 
 .artist-details-wrapper {
   text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  header .khs-logo {
+    width: 25rem;
+  }
+
+  .youtube-video {
+    height: 20rem;
+    width: 30rem;
+    margin-left: 5rem;
+  }
+
+  .khs-logo-wrapper{
+    height: 20rem;
+    width: 20rem;
+    margin-left: 5rem;
+  }
+
+  .khs-logo-letters{
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  header .khs-logo {
+    width: 21rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .slogan-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .youtube-video {
+    height: 17rem;
+    width: 25rem;
+    margin-left: 0rem;
+  }
+
+  .about-wrapper{
+    width: 25rem;
+  }
+
+  .about-wrapper p {
+    font-size: 0.8rem;
+  }
+
+  .khs-logo-wrapper{
+    display: none;
+  }
+
+  .artist-image{
+    height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  header .khs-logo {
+    width: 17rem;
+  }
+
+  .youtube-video {
+    height: 15rem;
+    width: 20rem;
+    margin-left: 0rem;
+  }
+
+  .about-wrapper{
+    width: 19rem;
+  }
+
+  .khs-logo-letters{
+    font-size: 3rem;
+  }
+
+  .artist-image{
+    height: 17rem;
+  }
 }
