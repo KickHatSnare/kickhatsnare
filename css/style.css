@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: white;
+}
+
+header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 5rem;
+}
+
+header .khs-logo {
+  filter: invert();
+  width: 30rem;
+  user-select: none;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slogan-text {
+  margin: 0;
+  text-align: center;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1rem;
+  font-weight: 700;
+}
+
+.youtube-video {
+  margin-left: 10rem;
+  border-radius: 1rem;
+}
+
+.slogan-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.white-button {
+  font-family: "Montserrat", Arial, sans-serif;
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-button {
+  font-family: "Montserrat", Arial, sans-serif;
+  height: 2.5rem;
+  width: 6rem;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.khs-image {
+  height: 23rem;
+  border-radius: 3rem;
+  margin-left: 10rem;
+}
+
+.about-wrapper {
+  text-align: center;
+  width: 30rem;
+}
+
+.about-us-text {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1rem;
+}
+
+.about-buttons {
+  margin-top: 2rem;
+}
+
+.artist-image {
+  height: 25rem;
+  border-radius: 3rem;
+  user-select: none;
+}
+
+.artist-link {
+  color: white;
+  text-decoration: none;
+}
+
+.artist-linka:visited{
+  color: white;
+}
+
+.artists-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artists-wrapper h2 {
+  margin-bottom: 0;
+}
+
+.artists-wrapper span {
+  color: #e4e4e4;
+}
+
+.artists-wrapper .white-button{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.artist-details-wrapper {
+  text-align: center;
+}

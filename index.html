@@ -1,8 +1,58 @@
 <html>
-    <head>
-        <title>KHS - KickHatSnare</title>
-    </head>
-    <body>
-        <h1>Under construction!</h1>
-    </body>
+  <head>
+    <title>KICK HAT SNARE</title>
+
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="32x32" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        class="khs-logo"
+        src="./assets/images/kickhatsnare-logo.svg"
+        draggable="false"
+      />
+    </header>
+    <div class="content-wrapper" id="content"></div>
+  </body>
+
+  <script>
+    const content = document.getElementById("content");
+
+    function switchToMainContent() {
+      content.innerHTML =
+        '<div class="slogan-wrapper">        <h1 class="slogan-text">BEAT<br />TO THE<br />FUTURE</h1>        <div class="buttons-wrapper">          <button id="about-us" class="white-button">About Us</button>          <button id="artists" class="secondary-button">Artists</button>        </div>      </div>      <iframe        class="youtube-video"        width="560"        height="315"        src="https://www.youtube.com/embed/SsdYZSIhiJs?si=HUrIzrW68fE2Bn7I"        title="YouTube video player"        frameborder="0"        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"        allowfullscreen      ></iframe>';
+
+      const aboutUsButton = document.getElementById("about-us");
+      const artistsButton = document.getElementById("artists");
+      aboutUsButton.addEventListener("click", switchToAboutUs);
+      artistsButton.addEventListener("click", switchToArtists);
+    }
+
+    function switchToAboutUs() {
+      content.innerHTML =
+        '<div class="about-wrapper">        <h2 class="about-us-text">ABOUT US</h2>        <p>          KICK HAT SNARE is a record label from Argentina that showcases the          authentic stories and positive messages of its artists through their          lyrics.          <br />          <br />          We believe that music is a force for good in the world. It can help          people get through their days and therefore build their future around          it.        </p>        <div class="about-buttons">          <button id="home" class="white-button">Home</button>          <button id="artists" class="secondary-button">Artists</button>        </div>      </div>      <img        class="khs-image"        src="./assets/images/khs-logo.png"        draggable="false"      />';
+
+      const homeButton = document.getElementById("home");
+      const artistsButton = document.getElementById("artists");
+      homeButton.addEventListener("click", switchToMainContent);
+      artistsButton.addEventListener("click", switchToArtists);
+    }
+
+    function switchToArtists() {
+      content.innerHTML =
+        '<div class="artists-wrapper">        <a href="https://jaesvn.heptagonmusic.com">          <img            class="artist-image"            src="./assets/images/jaesvn-profile.png"            draggable="false"        /></a>        <div class="artist-details-wrapper">          <a class="artist-link" href="https://jaesvn.heptagonmusic.com">            <h2>JAE SVN</h2>          </a>          <span>Director, Artist</span>        </div>        <button id="home" class="white-button">Home</button>      </div>';
+      const homeButton = document.getElementById("home");
+      homeButton.addEventListener("click", switchToMainContent);
+    }
+
+    switchToMainContent();
+  </script>
 </html>
