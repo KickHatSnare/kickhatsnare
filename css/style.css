@@ -16,12 +16,12 @@ header {
   align-items: center;
   top: 0;
   width: 100%;
-  height: 5rem;
+  height: 6rem;
 }
 
 header .khs-logo {
   filter: invert();
-  width: 30rem;
+  width: 27rem;
   user-select: none;
 }
 
@@ -84,6 +84,27 @@ header .khs-logo {
   height: 23rem;
   border-radius: 3rem;
   margin-left: 10rem;
+}
+
+.khs-logo-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 23rem;
+  width: 23rem;
+  border-radius: 3rem;
+  margin-left: 10rem;
+}
+
+.khs-logo-letters{
+  color: black;
+  font-weight: 900;
+  font-size: 5rem;
+  margin-left: 2.5rem;
+  letter-spacing: 2.5rem;
+  z-index: 1;
+  user-select: none;
 }
 
 .about-wrapper {
