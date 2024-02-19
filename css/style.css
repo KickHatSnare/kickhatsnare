@@ -159,13 +159,18 @@ header .khs-logo {
   margin-top: 2rem;
 }
 
+.artist-wrapper {
+  -webkit-animation: bounce-in-top 1.1s both;
+  animation: bounce-in-top 1.1s both;
+}
+
 .artist-image {
+  background: transparent url("/assets/images/loading.svg") no-repeat scroll
+    center center;
   max-height: calc(12vw + 10rem);
   min-height: 15rem;
   border-radius: 3rem;
   user-select: none;
-  -webkit-animation: bounce-in-top 1.1s both;
-  animation: bounce-in-top 1.1s both;
 }
 
 .artist-link {
