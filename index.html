@@ -12,7 +12,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
 
-    <meta name="title" content="KICK HAT SNARE">
+    <meta name="title" content="KICK HAT SNARE" />
     <meta property="og:title" content="KICK HAT SNARE" />
     <meta name="description" content="BEAT TO THE FUTURE" />
     <meta name="og:description" content="BEAT TO THE FUTURE" />
@@ -43,64 +43,102 @@
         draggable="false"
       />
     </header>
-    <div class="content-wrapper" id="content"></div>
+    <!-- CONTENT - START -->
+    <div class="content-wrapper" id="content">
+      <!-- HOME - START -->
+      <div id="home-container" class="show">
+        <div class="slogan-wrapper">
+          <h1 class="slogan-text">BEAT<br />TO THE<br />FUTURE</h1>
+          <div class="buttons-wrapper">
+            <button class="about-us-button white-button">About Us</button>
+            <button class="artists-button secondary-button">Artists</button>
+          </div>
+        </div>
+        <iframe
+          class="youtube-video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/SsdYZSIhiJs?si=HUrIzrW68fE2Bn7I"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- HOME - END -->
+
+      <!-- ABOUT US - START -->
+      <div id="about-us-container" class="hide">
+        <div class="about-wrapper">
+          <h2 class="about-us-text">ABOUT US</h2>
+          <p>
+            <strong>KICK HAT SNARE</strong> is a record label from Argentina
+            that showcases the
+            <strong>authentic stories and positive messages</strong> of its
+            artists through their lyrics. <br />
+            <br />
+            We believe that <u>music is a force for good</u> in the world. It
+            can help people get through their days and therefore
+            <i>build their future</i>
+            around it.
+          </p>
+          <div class="about-buttons">
+            <button class="home-button white-button">Home</button>
+            <button class="artists-button secondary-button">Artists</button>
+          </div>
+        </div>
+        <img class="khs-logo-image" src="/assets/images/khs-logo.svg" />
+      </div>
+      <!-- ABOUT US - END -->
+
+      <!-- ARTISTS - START -->
+      <div id="artists-container" class="hide">
+        <div class="artists-wrapper">
+          <a href="https://jaesvn.kickhatsnare.com" draggable="false">
+            <img
+              class="artist-image"
+              src="./assets/images/jaesvn-profile.png"
+              draggable="false"
+          /></a>
+          <div class="artist-details-wrapper">
+            <a
+              class="artist-link"
+              href="https://jaesvn.kickhatsnare.com"
+              draggable="false"
+            >
+              <h2>JAE SVN</h2>
+            </a>
+            <span>Director, Artist</span>
+          </div>
+          <button class="home-button white-button">Home</button>
+        </div>
+      </div>
+      <!-- ABOUT US - END -->
+    </div>
+    <!-- CONTENT - END -->
   </body>
 
   <script>
-    const content = document.getElementById("content");
+    const sections = ["home", "about-us", "artists"];
 
-    function switchToMainContent() {
-      var xhr =
-        typeof XMLHttpRequest != "undefined"
-          ? new XMLHttpRequest()
-          : new ActiveXObject("Microsoft.XMLHTTP");
-      xhr.open("get", "./content/main.html", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          document.getElementById("content").innerHTML = xhr.responseText;
-          const aboutUsButton = document.getElementById("about-us");
-          const artistsButton = document.getElementById("artists");
-          aboutUsButton.addEventListener("click", switchToAboutUs);
-          artistsButton.addEventListener("click", switchToArtists);
+    function showSection(id) {
+      sections.forEach((section) => {
+        const container = document.getElementById(`${section}-container`);
+        if (section === id) {
+          container.style.display = "flex";
+        } else {
+          container.style.display = "none";
         }
-      };
-      xhr.send();
+      });
     }
 
-    function switchToAboutUs() {
-      var xhr =
-        typeof XMLHttpRequest != "undefined"
-          ? new XMLHttpRequest()
-          : new ActiveXObject("Microsoft.XMLHTTP");
-      xhr.open("get", "./content/aboutus.html", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          document.getElementById("content").innerHTML = xhr.responseText;
-          const homeButton = document.getElementById("home");
-          const artistsButton = document.getElementById("artists");
-          homeButton.addEventListener("click", switchToMainContent);
-          artistsButton.addEventListener("click", switchToArtists);
-        }
-      };
-      xhr.send();
-    }
-
-    function switchToArtists() {
-      var xhr =
-        typeof XMLHttpRequest != "undefined"
-          ? new XMLHttpRequest()
-          : new ActiveXObject("Microsoft.XMLHTTP");
-      xhr.open("get", "./content/artists.html", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          document.getElementById("content").innerHTML = xhr.responseText;
-          const homeButton = document.getElementById("home");
-          homeButton.addEventListener("click", switchToMainContent);
-        }
-      };
-      xhr.send();
-    }
-
-    switchToMainContent();
+    sections.forEach((section) => {
+      let buttons = document.getElementsByClassName(`${section}-button`);
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function () {
+          showSection(section);
+        };
+      }
+    });
   </script>
 </html>
