@@ -9,6 +9,7 @@ body {
   background-color: black;
   font-family: "Montserrat", Arial, sans-serif;
   color: white;
+  overflow: hidden;
 }
 
 header {
@@ -26,6 +27,19 @@ header .khs-logo {
   max-width: 28vw;
   min-width: 15rem;
   user-select: none;
+}
+
+#sine-wave {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & path {
+    filter: blur(10vh);
+  }
 }
 
 .content-wrapper {
@@ -169,7 +183,7 @@ header .khs-logo {
     center center;
   max-height: calc(12vw + 10rem);
   min-height: 15rem;
-  border-radius: 3rem;
+  border-radius: 5vh;
   user-select: none;
 }
 
@@ -200,7 +214,7 @@ header .khs-logo {
 .artists-wrapper .white-button {
   position: absolute;
   bottom: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 2vh;
 }
 
 .artist-details-wrapper {
@@ -220,15 +234,15 @@ header .khs-logo {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100%;
   bottom: 0;
+  right: 0;
 }
 
 .social-media {
   max-height: 2vw;
   min-height: 1.5rem;
-  margin-right: 1vw;
-  margin-bottom: 1vh;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
   user-select: none;
 }
 
